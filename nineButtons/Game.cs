@@ -8,22 +8,36 @@ namespace nineButtons
 {
     class Game
     {
-        private enum name
+
+        public Game()
+        {
+            currentPlayer = name.player1;
+        }
+
+        //about currentPlayer
+        public enum name
         {
             player1,
             player2,
         }
 
         public name currentPlayer;
-        
 
         public void TansPlayer()
         {
-            if (currentPlayer == player1)
+            if (currentPlayer == name.player1)
             {
-
+                currentPlayer = name.player2;
             }
-            
+            else
+            {
+                currentPlayer = name.player1;
+            }
+        }
+
+        public void GameIsEnd()
+        {
+        
         }
 
     }

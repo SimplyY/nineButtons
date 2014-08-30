@@ -12,54 +12,62 @@ namespace nineButtons
 {
     public partial class Form1 : Form
     {
+        private Game thisGame;
+        public List<Button> nineButtons;
+
         public Form1()
         {
             InitializeComponent();
+            InitNineButtons();
+            InitGame();
+        }
+
+        private void InitNineButtons()
+        {
+            nineButtons.Add(button1);
+            nineButtons.Add(button2);
+            nineButtons.Add(button3);
+            nineButtons.Add(button4);
+            nineButtons.Add(button5);
+            nineButtons.Add(button6);
+            nineButtons.Add(button7);
+            nineButtons.Add(button8);
+            nineButtons.Add(button9);
+        }
+
+        private void InitGame()
+        {
+            thisGame = new Game();
         }
 
         private void button_Click(object sender, EventArgs e)
         {
+            ShowAClick(sender);
 
+            thisGame.TansPlayer();
+            thisGame.GameIsEnd();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ShowAClick(object sender)
         {
-
+            Button clickedButton = (Button)sender;
+            string showedText = GetShowedText();
+            clickedButton.Text = showedText;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private string GetShowedText()
         {
+            string showedText;
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
+            if (thisGame.currentPlayer == Game.name.player1)
+            {
+                showedText = "黑";
+            }
+            else
+            {
+                showedText = "白";
+            }
+            return showedText;
         }
     }
 }
