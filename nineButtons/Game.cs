@@ -35,10 +35,14 @@ namespace nineButtons
             }
         }
 
-        public void GameIsEnd()
+        public void GameIsEnd(System.Windows.Forms.Button[,] nineButtons)
         {
         
         }
 
+        private void StopGame()
+        {
+ 
+        }
     }
 }
