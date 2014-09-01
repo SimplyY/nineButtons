@@ -25,7 +25,7 @@ namespace nineButtons
 
         private void InitStatusBox()
         {
-            setStatusBox("玩家1的回合");
+            setStatusBox("白方的回合");
         }
 
         public void setStatusBox(string status)
@@ -75,7 +75,7 @@ namespace nineButtons
         {
             string showedText;
 
-            if (thisGame.currentPlayer == Game.playerName.player1)
+            if (thisGame.currentPlayer == Game.playerName.white)
             {
                 showedText = "黑";
             }

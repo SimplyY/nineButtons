@@ -13,27 +13,27 @@ namespace nineButtons
         public Game()
         {
             gameIsEnd = false;
-            currentPlayer = playerName.player1;
+            currentPlayer = playerName.white;
         }
 
         //about currentPlayer
         public enum playerName
         {
-            player1,
-            player2,
+            white,
+            black,
         }
 
         public playerName currentPlayer;
 
         public void TansPlayer()
         {
-            if (currentPlayer == playerName.player1)
+            if (currentPlayer == playerName.white)
             {
-                currentPlayer = playerName.player2;
+                currentPlayer = playerName.black;
             }
             else
             {
-                currentPlayer = playerName.player1;
+                currentPlayer = playerName.white;
             }
         }
 
@@ -145,7 +145,7 @@ namespace nineButtons
         private string GetlastedPlayerButtonText()
         {
             string lastedPlayerButtonText = "";
-            if (currentPlayer == playerName.player1)
+            if (currentPlayer == playerName.white)
             {
                 lastedPlayerButtonText = "白";
             }
