@@ -38,6 +38,15 @@ namespace nineButtons
         //judge whether has a player's buttons in a line
         public void GameIsEnd(System.Windows.Forms.Button[,] nineButtons)
         {
+
+            if (whetherHasButtonsInALine(nineButtons))
+            {
+                StopGame();
+            }
+        }
+
+        private bool whetherHasButtonsInALine(System.Windows.Forms.Button[,] nineButtons)
+        {
             bool whetherHasButtonsInALine = false;
 
             bool inARow = WhetherButtonsInARow(nineButtons);
@@ -46,10 +55,7 @@ namespace nineButtons
 
             whetherHasButtonsInALine = inARow || inAColumn || inADiagonal;
 
-            if (whetherHasButtonsInALine)
-            {
-                StopGame();
-            }
+            return whetherHasButtonsInALine;
         }
 
         private bool WhetherButtonsInARow(System.Windows.Forms.Button[,] nineButtons)
@@ -58,11 +64,19 @@ namespace nineButtons
             string lastedPlayerButtonText = GetlastedPlayerButtonText();
             for (int i = 0; i < 3; i++)
 			{
-                int beginIndex = i * 3 - 1;
-
-                isInALine = testALine(nineButtons, lastedPlayerButtonText, beginIndex, 1);
-                if (isInALine == true)
+                int rowIndex = i;
+                int buttonsNumberInTheRow = 0;
+                for (int j = 0; j < 3; j++)
                 {
+                    if (nineButtons[rowIndex, j].Text == lastedPlayerButtonText)
+                    {
+                        ++buttonsNumberInTheRow;
+                    }
+                }
+
+                if (buttonsNumberInTheRow == 3)
+                {
+                    isInALine = true;
                     break;
                 }
 			}
@@ -71,18 +85,60 @@ namespace nineButtons
 
         private bool WhetherButtonsInAColumn(System.Windows.Forms.Button[,] nineButtons)
         {
+            bool isInALine = false;
+            string lastedPlayerButtonText = GetlastedPlayerButtonText();
+            for (int i = 0; i < 3; i++)
+            {
+                int columnIndex = i;
+                int buttonsNumberInTheColumn = 0;
+                for (int j = 0; j < 3; j++)
+                {
+                    if (nineButtons[j, columnIndex].Text == lastedPlayerButtonText)
+                    {
+                        ++buttonsNumberInTheColumn;
+                    }
+                }
+                if (buttonsNumberInTheColumn == 3)
+                {
+                    isInALine = true;
+                    break;
+                }
+            }
+            return isInALine;
 
         }
 
         private bool WhetherButtonsInADiagonal(System.Windows.Forms.Button[,] nineButtons)
         {
+            bool isInALine = false;
+            string lastedPlayerButtonText = GetlastedPlayerButtonText();
+            for (int i = 0; i < 3; i++)
+            {
+                int columnIndex = i;
+                int buttonsNumberInTheDiagonal1 = 0;
+                int buttonsNumberInTheDiagonal2 = 0;
+                for (int j = 0; j < 3; j++)
+                {
+                    if (nineButtons[i, i].Text == lastedPlayerButtonText)
+                    {
+                        ++buttonsNumberInTheDiagonal1;
+                    }
+                    if (nineButtons[j, 3 - i].Text == lastedPlayerButtonText)
+                    {
+                        ++buttonsNumberInTheDiagonal2;
+                    }
+                }
 
+                if (buttonsNumberInTheDiagonal1 == 3||buttonsNumberInTheDiagonal2 == 3)
+                {
+                    isInALine = true;
+                    break;
+                }
+            }
+            return isInALine;
         }
 
-        private bool testALine(System.Windows.Forms.Button[,] nineButtons, string lastedPlayerButtonText, int beginIndex, int indexInterval)
-        {
 
-        }
 
         private string GetlastedPlayerButtonText()
         {
