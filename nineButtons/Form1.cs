@@ -61,7 +61,7 @@ namespace nineButtons
         {
             string showedText;
 
-            if (thisGame.currentPlayer == Game.name.player1)
+            if (thisGame.currentPlayer == Game.playerName.player1)
             {
                 showedText = "黑";
             }
