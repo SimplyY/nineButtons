@@ -121,11 +121,11 @@ namespace nineButtons
                 int buttonsNumberInTheDiagonal2 = 0;
                 for (int j = 0; j < 3; j++)
                 {
-                    if (nineButtons[i, i].Text == lastedPlayerButtonText)
+                    if (nineButtons[j, j].Text == lastedPlayerButtonText)
                     {
                         ++buttonsNumberInTheDiagonal1;
                     }
-                    if (nineButtons[j, 3 - i].Text == lastedPlayerButtonText)
+                    if (nineButtons[j, 2 - j].Text == lastedPlayerButtonText)
                     {
                         ++buttonsNumberInTheDiagonal2;
                     }
@@ -142,16 +142,16 @@ namespace nineButtons
 
 
 
-        private string GetlastedPlayerButtonText()
+        public string GetlastedPlayerButtonText()
         {
             string lastedPlayerButtonText = "";
             if (currentPlayer == playerName.white)
             {
-                lastedPlayerButtonText = "白";
+                lastedPlayerButtonText = "黑";
             }
             else
             {
-                lastedPlayerButtonText = "黑";
+                lastedPlayerButtonText = "白";
             }
 
             return lastedPlayerButtonText;

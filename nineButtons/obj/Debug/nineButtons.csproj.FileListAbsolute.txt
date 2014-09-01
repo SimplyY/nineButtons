@@ -1,1 +1,9 @@
 C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\bin\Debug\nineButtons.exe.config
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\bin\Debug\nineButtons.exe
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\bin\Debug\nineButtons.pdb
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\obj\Debug\nineButtons.csprojResolveAssemblyReference.cache
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\obj\Debug\nineButtons.Form1.resources
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\obj\Debug\nineButtons.Properties.Resources.resources
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\obj\Debug\nineButtons.csproj.GenerateResource.Cache
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\obj\Debug\nineButtons.exe
+C:\Users\yuwei\Desktop\编程文件\c++&c#\nineButtons\nineButtons\obj\Debug\nineButtons.pdb

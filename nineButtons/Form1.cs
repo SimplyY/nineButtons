@@ -67,8 +67,11 @@ namespace nineButtons
         private void ShowAClick(object sender)
         {
             Button clickedButton = (Button)sender;
-            string showedText = GetShowedText();
-            clickedButton.Text = showedText;
+            string showedButtonText = GetShowedText();
+
+            string showedStatusText = thisGame.GetlastedPlayerButtonText() + "方的回合";
+            setStatusBox(showedStatusText);
+            clickedButton.Text = showedButtonText;
         }
 
         private string GetShowedText()
@@ -77,11 +80,11 @@ namespace nineButtons
 
             if (thisGame.currentPlayer == Game.playerName.white)
             {
-                showedText = "黑";
+                showedText = "白";
             }
             else
             {
-                showedText = "白";
+                showedText = "黑";
             }
             return showedText;
         }
