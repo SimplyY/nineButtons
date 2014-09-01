@@ -8,9 +8,11 @@ namespace nineButtons
 {
     class Game
     {
+        public bool gameIsEnd;
 
         public Game()
         {
+            gameIsEnd = false;
             currentPlayer = playerName.player1;
         }
 
@@ -36,12 +38,12 @@ namespace nineButtons
         }
 
         //judge whether has a player's buttons in a line
-        public void GameIsEnd(System.Windows.Forms.Button[,] nineButtons)
+        public void GameIsEnd(System.Windows.Forms.Button[,] nineButtons, Form1 thisForm)
         {
 
             if (whetherHasButtonsInALine(nineButtons))
             {
-                StopGame();
+                StopGame(thisForm);
             }
         }
 
@@ -155,9 +157,12 @@ namespace nineButtons
             return lastedPlayerButtonText;
         }
 
-        private void StopGame()
+        private void StopGame(Form1 thisForm)
         {
- 
+            gameIsEnd = true;
+
+            string status = GetlastedPlayerButtonText() + "方获得胜利";
+            thisForm.setStatusBox(status);
         }
     }
 }

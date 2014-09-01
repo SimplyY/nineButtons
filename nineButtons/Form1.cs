@@ -18,8 +18,19 @@ namespace nineButtons
         public Form1()
         {
             InitializeComponent();
+            InitStatusBox();
             InitNineButtons();
             InitGame();
+        }
+
+        private void InitStatusBox()
+        {
+            setStatusBox("玩家1的回合");
+        }
+
+        public void setStatusBox(string status)
+        {
+            statusBox.Text = status;
         }
 
         private void InitNineButtons()
@@ -44,10 +55,13 @@ namespace nineButtons
 
         private void button_Click(object sender, EventArgs e)
         {
-            ShowAClick(sender);
+            if (thisGame.gameIsEnd != true)
+            {
+                ShowAClick(sender);
 
-            thisGame.TansPlayer();
-            thisGame.GameIsEnd(nineButtons);
+                thisGame.TansPlayer();
+                thisGame.GameIsEnd(nineButtons, this);
+            }
         }
 
         private void ShowAClick(object sender)
@@ -71,5 +85,7 @@ namespace nineButtons
             }
             return showedText;
         }
+
+        
     }
 }
