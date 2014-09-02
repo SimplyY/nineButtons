@@ -18,9 +18,16 @@ namespace nineButtons
         public Form1()
         {
             InitializeComponent();
+
+            InitGame();
+        }
+
+        private void InitGame()
+        {
             InitStatusBox();
             InitNineButtons();
-            InitGame();
+
+            thisGame = new Game();
         }
 
         private void InitStatusBox()
@@ -48,10 +55,7 @@ namespace nineButtons
             nineButtons[2, 2] = button9;
         }
 
-        private void InitGame()
-        {
-            thisGame = new Game();
-        }
+
 
         private void button_Click(object sender, EventArgs e)
         {
@@ -88,6 +92,11 @@ namespace nineButtons
                 showedText = "黑";
             }
             return showedText;
+        }
+
+        private void ReinitGameButton_Click(object sender, EventArgs e)
+        {
+            InitGame();
         }
     }
 }
