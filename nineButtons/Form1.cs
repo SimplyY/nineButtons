@@ -58,7 +58,8 @@ namespace nineButtons
             if (thisGame.gameIsEnd != true)
             {
                 ShowAClick(sender);
-
+                Button clickedButton = (Button)sender;
+                clickedButton.Enabled = false;
                 thisGame.TansPlayer();
                 thisGame.GameIsEnd(nineButtons, this);
             }
@@ -88,7 +89,5 @@ namespace nineButtons
             }
             return showedText;
         }
-
-        
     }
 }
