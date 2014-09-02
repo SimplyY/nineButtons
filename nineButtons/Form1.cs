@@ -53,6 +53,14 @@ namespace nineButtons
             nineButtons[2, 0] = button7;
             nineButtons[2, 1] = button8;
             nineButtons[2, 2] = button9;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    nineButtons[i, j].Enabled = true;
+                    nineButtons[i, j].Text = "";
+                }
+            }
         }
 
 
